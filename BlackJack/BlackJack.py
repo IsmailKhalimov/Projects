@@ -48,13 +48,14 @@ class BlackJackApp:
             self.dealer_hand.append(random.choice(self.cards))
 
         self.display_hand()
+        ds_hand = f"\nDealer's hand:{', '.join(map(str, self.dealer_hand))} ({self.calculate_hand_value(self.dealer_hand)})"
 
         if self.calculate_hand_value(self.dealer_hand) > 21 or self.calculate_hand_value(self.player_hand) > self.calculate_hand_value(self.dealer_hand):
-            messagebox.showinfo("Win!", "You've won!")
+            messagebox.showinfo("Win!", "You've won! " + ds_hand)
         elif self.calculate_hand_value(self.player_hand) == self.calculate_hand_value(self.dealer_hand):
-            messagebox.showinfo("Tie.", "It's a tie")
+            messagebox.showinfo("Tie.", "It's a tie. " + ds_hand)
         else:
-            messagebox.showinfo("Lose", "You've lost(")
+            messagebox.showinfo("Lose", "You've lost. " + ds_hand)
 
         self.reset_game()
 
