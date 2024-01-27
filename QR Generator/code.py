@@ -21,7 +21,7 @@ def generare_qr():
     photo = ImageTk.PhotoImage(qr_image)
     qr_label.config(image=photo)
     qr_label.photo = photo
-    mesaj_label.config(text="Your QR code:")
+    message_label.config(text="Your QR code:")
 
 app = tk.Tk()
 app.title("Generate code QR")
@@ -34,8 +34,8 @@ input_entry.pack()
 generate_button = tk.Button(app, text="Generate Code QR", command=generare_qr, font=("Helvetica", 12))
 generate_button.pack()
 
-mesaj_label = tk.Label(app, text="", font=("Helvetica", 12))
-mesaj_label.pack()
+message_label = tk.Label(app, text="", font=("Helvetica", 12))
+message_label.pack()
 
 qr_label = tk.Label(app)
 qr_label.pack()
